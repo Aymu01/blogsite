@@ -1,0 +1,51 @@
+@import '../scss/global.scss';
+
+.comment-area{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   .title{
+    @include text(20px,#2E3A59,600);
+   }
+   form{
+    display: flex;
+   flex-direction: column;
+    textarea{
+        @include button(14px 16px, 0,#FFF,#2E3A59);
+        border: 1px solid #E4E9F2;
+        height: 200px;
+        resize: none;
+        &::placeholder{
+            color: #8F9BB3;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    button{
+        margin-top: 15px;
+        @include button-h-w(48px,100%,#fff,#2E3A59,5px);
+        cursor: pointer;
+        transition: 300ms all;
+        font-size: 15px;
+        border: 1px solid #FFD339;
+        &:hover{
+            background-color: #FFD339;
+        }
+    }
+   }
+}
+
+@media (min-width:768px) {
+    .comment-area{
+        form{
+            .button{
+                text-align: end;
+            }
+            button{
+                width: 30%;
+            }
+        }
+    }
+    
+}

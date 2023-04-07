@@ -1,0 +1,29 @@
+@import '../scss/global.scss';
+
+.comment{
+    @include display(row,flex-start,flex-start,10px);
+    @include button(10px 10px,0,#fff,#000);
+    margin-bottom: 18px;
+    background-color: #fff;
+    img{
+        @include button-h-w(50px,50px,#fff,#fff,50%);
+    }
+    .com-body{
+        @include display(row,center,space-between,0);
+        width: 100%;
+        .com-text{
+            width: 70%;
+            .title{
+                @include text(17px,#000,500);
+                margin-bottom: 4px;
+            }
+            .com{
+                @include text(14px,#94a0a5,400);
+            }
+        }
+        .com-replay{
+            @include text(12px,#d49e5e,500);
+            cursor: pointer;
+        }
+    }
+}

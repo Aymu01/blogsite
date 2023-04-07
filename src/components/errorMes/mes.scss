@@ -1,0 +1,8 @@
+@import '../scss/global.scss';
+.message{
+    @include text(14px,#0f5132,500);
+    @include button(16px 25px,4px,#ffd439b2,#0f5132);
+    border: 1px solid #ffd439dc;
+    text-align: center;
+    margin-bottom: 15px;
+  }

@@ -1,0 +1,14 @@
+@import '../scss/global.scss';
+.other-info{
+    @include display(row,center,center,35px);
+    .dataTime, .read{
+      @include text(14px,#8F9BB3,400);
+    }
+    .read{
+        @include display(row,center,center,7px);
+        svg{
+            width: 18px;
+            height: 18px;
+        }
+    }
+}

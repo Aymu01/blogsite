@@ -1,0 +1,48 @@
+@import "../scss/global.scss";
+$textColor:#222B45;
+$backColor:#E4E9F2;
+.menu-card{
+    background-color: #fff;
+    width: 60%;
+    height: 700px;
+    padding: 24px 16px ;
+    .close{
+        margin-bottom: 40px;
+    }
+    .menu-title{
+        @include display(column,center,center,20px);
+        margin-bottom: 60px;
+        .title{
+            @include text(20px,$textColor,400);
+            text-decoration: none
+        }
+    }
+    .choose{
+        @include display(column,center,center,25px);
+        .post, .creator{
+            font-weight: 600;
+            text-decoration: none
+        }
+        .post{
+           @include button(14px 22px,8px,#FFD339,$textColor);    
+           text-align: center 
+        }
+        .creator{
+            @include button(14px 67px,8px,$backColor,$textColor);
+        }
+        margin-bottom: 50px;
+    }
+    .lang-menu{
+        @include display(row,center,space-around,0);
+        input{
+            display: none;
+            &:checked + span{
+                background-color: #2E3A59;
+                color: #FFD339;
+            }
+        }
+        span{
+        @include button(10px,18px,$backColor,#2E3A59)
+        }
+    }
+}

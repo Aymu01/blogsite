@@ -1,0 +1,125 @@
+@import '../scss/global.scss';
+.all-info{
+    background-color: #F6f6f6;
+    padding: 25px 32px;
+
+}
+.info{
+  .blog-info{
+    margin-bottom: 55px;
+    .blog-name{
+        @include text(27px,#222B45,600);
+        text-align: center;
+        line-height: 32px;
+        margin-bottom: 16px;
+    }
+    .image{
+        margin: 25px 0;
+        img{
+            width: 326px;
+            height: 211px;
+        }
+    }
+    .blog-text{
+        @include text(18px,#2E3A59,400);
+        .alt-title{
+            @include text(22px,#222B45,600);
+            margin-bottom: 24px;
+        }
+    }
+  }
+  .other{
+    border-bottom: 1px solid #E4E9F2;
+    margin-bottom: 30px;
+    .share{
+       @include text(20px,#2E3A59,400);
+       @include display(row,center,flex-start,20px);
+       margin-bottom: 40px;
+       .icon{
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+       }
+       .git{
+        color: #192038;
+       }
+       .face{
+        color: #0095FF;
+       }
+       .twitter{
+        color: #42AAFF;
+       }
+       .world{
+        color: #00D68F;
+       }
+    }
+    .topics{
+        margin-bottom: 40px;
+    }
+    .sim-topic{
+        @include text(20px,#2E3A59,400);
+        margin-bottom: 16px;
+    }
+    .topic{
+        @include display(row,center,flex-start,8px 9px);
+        flex-wrap: wrap;
+      div{
+        @include button(4px 16px,25px,rgba(51, 102, 255, 0.08),#3366FF);
+        border: 1px solid #3366FF;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  .num-com{
+    @include text(17px,#000,500);
+    margin-bottom: 15px;
+}
+  .similar{
+    margin-top: 35px;
+    .similar-title{
+        @include text(25px,#222B45,400);
+        text-align: center;
+    }
+  }
+}
+
+@media (min-width:768px){
+    .all-info{
+        display: grid;
+        place-items: center;
+        background-color: #F6f6f6;
+    }
+    .info{
+        //padding: 55px 300px 130px;
+        width: 70%;
+        .blog-info{
+            .blog-name{
+               font-size: 35px;
+               margin-bottom: 24px;
+               text-align: center;
+            }
+            .image{
+                margin: 35px 0 24px ;
+                display: grid;
+                place-items: center;
+                img{
+                    height: 400px;
+                }
+            }
+            .blog-text{
+                .alt-title{
+                    font-size: 26px;
+                }
+            }
+        }
+        .other{
+           .topics{
+            @include display(row,center,flex-start,14px);
+            .sim-topic{
+                margin-bottom: 0;
+            }
+           }
+        }
+    }
+}

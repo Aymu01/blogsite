@@ -1,0 +1,165 @@
+@import '../scss/global.scss';
+
+.nav-menu {
+    position: relative;
+    .menu-cards {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000, $alpha: 0.5);
+        z-index: 10;
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+        visibility: hidden;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            left: 0;
+        }
+    }
+}
+.navbar {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .lang {
+        display: none;
+    }
+
+    .join {
+
+        .log-sign{
+            display: none;
+        }
+
+        .mob-join {
+            font-size: 14px;
+            font-weight: 400;
+            padding: 10px 23px;
+            background-color: #FFD339;
+            border-radius: 8px;
+            border: none;
+            text-decoration: none;
+            color: #222B45;
+        }
+    }
+
+    .user{
+        .user-name{
+            display: none;
+        }
+        .user-photo{
+                img{
+                    @include button-h-w(50px,50px,#fff,#fff,50%);
+                }
+        }
+    }
+
+}
+
+@media (min-width:768px) {
+    .nav-menu {
+        display: grid;
+        place-items: center;
+        .menu-cards {
+            display: none;
+        }
+       
+        .navbar {
+            width: 80%;
+            .left {
+                .menu-logo {
+                    display: none;
+                }
+                cursor: pointer;
+            }
+
+            .menu {
+                @include display(row, center, space-evenly,0);
+                cursor: pointer;
+                position: relative;
+                width: 33%;
+                .menu-title{
+                    text-decoration: none;
+                    color: #9e9c9c;
+                }
+                span{
+                    display: black;
+                    width: 70px;
+                    height: 3px;
+                    background-color: rgba(255, 211, 57, 1);
+                    position:absolute;
+                    bottom: -30px;
+                }
+                .ana{
+                    left: -1px;
+                }
+                .blog{
+                    right: 0;
+                    width: 30px;
+                }
+            }
+
+            .right {
+                .mob-join {
+                    display: none;
+                }        
+                .lang {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include display(row, center, center, 6px);
+                    cursor: pointer;
+                    svg {
+                        width: 22px;
+                        height: 22px;
+                    }
+                    
+                    @include text(14px,#2E3A59,400)
+                }
+                .join{
+                    @include display(row,center,center,15px)
+                }
+                .log-sign{
+                    @include button(12px 26px,8px,transparent,#222B45);
+                    font-size: 14px;
+                    border: 1px solid #C5CEE0;
+                    display: grid;
+                    place-items: center;
+                    cursor: pointer;
+                    transition: 300ms all;
+                    text-decoration: none;
+                    color: #222B45;
+                    &:hover{
+                        background-color: #FFD339;
+                        border-color: #FFD339;
+                    }
+                }
+                .user{
+                    @include display(row,center,center,10px);
+                    cursor: pointer;
+                    .user-name{
+                        display: block;
+                        color: #9e9c9c;
+                    }
+                }
+                @include display(row, center, center, 35px);
+
+            }
+        }
+    }
+}

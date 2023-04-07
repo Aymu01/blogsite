@@ -1,0 +1,17 @@
+@import '../scss/global.scss';
+.log-header{
+    background-color: #FFD339;
+    padding: 24px 16px 0;
+    
+    @include display(row,center,center,20px);
+    .button{
+        @include button-h-w(48px,156px,#FFEA88,#2E3A59,8px 8px 0 0);
+        font-size: 17px;
+        text-decoration: none;
+        display: grid;
+        place-items: center;
+    }
+    .click{
+        background-color: #fff;
+    }
+}

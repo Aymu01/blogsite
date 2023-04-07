@@ -1,0 +1,70 @@
+@import '../scss/global.scss';
+*{
+    margin: 0;
+    padding: 0;
+}
+$textColor:#222B45;
+.home{
+    padding: 25px 32px;
+    background-color: #F6f6f6;
+    height: 82vh;
+    .first{
+        @include display(column,center,center,0);
+        padding-top: 20px;
+        position: relative;
+        margin-bottom: 48px;
+        .main-message{
+            @include text(34px,#222B45,600);
+            text-align: center;
+            margin-bottom: 35px;
+            position: relative;
+        }
+        img{
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            bottom: -35px;
+            left: 0;
+        }
+        .choose-message{
+            @include text(16px,#8F9BB3,400);
+            margin-bottom: 65px;
+        }
+        .choose{
+            @include display(column,center,center,10px);
+            .post, .creator{
+                font-weight: 600;
+                text-decoration: none;
+                width: 328px;
+                height: 48px;
+                display: grid;
+                place-items: center;
+                @include button(0,8px,#FFD339,$textColor);
+                &:hover{
+                    background-color: darken($color: #FFD339, $amount: 10);
+                }
+            }
+            margin-bottom: 50px;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .home{
+        .first{
+            padding: 70px 112px;
+            margin-bottom: 0;
+            .main-message{
+                font-size: 60px;
+                width: 70%;
+            }
+            .message{
+                font-size: 20px;
+            }
+            .choose{
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
+    }
+}

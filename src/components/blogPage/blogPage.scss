@@ -1,0 +1,73 @@
+@import '../scss/global.scss';
+
+.page {
+    padding: 25px 32px;
+    @include display(column,center,center,20px);
+    background-color: #f6f6f6;
+    min-height: 80vh;
+    .title {
+        @include text(24px, #222B45, 400);
+        margin-bottom: 32px;
+        text-align: center;
+    }
+    .search{
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        input {
+            @include button(14px 16px 14px 43px, 8px, #FFF, #2E3A59);
+            border: 1px solid #E4E9F2;
+            position: relative;
+            font-size: 17px;
+            &::placeholder {
+                @include text(15px, #8F9BB3, 400);
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+        .search-icon{
+            position: absolute;
+            top: 15px;
+            left: 12px;
+            svg{
+                width: 20px;
+                height: 20px;
+                color: #8F9BB3;
+            }
+        }
+    }
+    .link{
+        text-decoration: none
+    }
+
+    .blogs {
+        display: block;
+        padding: 16px;
+
+    }
+}
+
+@media (min-width:768px) {
+    .page {
+        padding: 32px 112px;
+
+        .title {
+            @include text(34px, #222B45, 400);
+        }
+        
+        .search{
+            width: 50%;
+            text-align: center;
+        }
+      
+
+        .blogs {
+            display: grid;
+            grid-gap: 50px 50px;
+            grid-template-columns:  repeat(2, 0.7fr);
+        }
+    }
+}

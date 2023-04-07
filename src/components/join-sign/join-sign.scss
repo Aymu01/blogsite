@@ -1,0 +1,38 @@
+@import '../scss/global.scss';
+.main{
+    .main-rigth{
+        .comp{
+            display: none;
+        }
+        .mob{
+            margin-bottom: 25px;
+        }
+    }
+    .main-left{
+        display: none;
+    }
+}
+
+@media (min-width:768px) {
+    .main{
+        @include display(row,center,space-evenly,0);
+        .main-rigth{
+            @include display(column,center,center,0);
+            .mob{
+                display: none;
+            }
+            .comp{
+                @include display(column,center,center,10px);
+                h3{
+                    @include text(22px,#2E3A59,400);
+                }
+                h5{
+                    @include text(16px,#8F9BB3,400);
+                }
+            }
+        }
+        .main-left{
+            display: block;
+        }
+    }
+}

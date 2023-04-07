@@ -1,0 +1,126 @@
+@import '../scss/global.scss';
+
+.content{
+    padding: 25px 32px 56px;
+    h5{
+        @include text(26px,#222B45,600);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    form{
+        .validation{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            width: 100%;
+            margin-bottom: 30px;
+            label{
+                @include text(14px,#2E3A59,400);
+            }
+            input,select,.photo,textarea{
+                @include button(14px 16px, 8px,#F7F9FC,#2E3A59);
+                border: 1px solid #E4E9F2;
+                &:focus{
+                    outline: none;
+                }
+            }
+            textarea,input{
+                &::placeholder{
+                    color: #8F9BB3;
+                }
+            }
+            select:invalid {
+                color: #8F9BB3;
+            }
+            select{
+                color: #2E3A59;
+                appearance: none;
+                width: 100%;
+                option{
+                    color: #2E3A59;
+                }
+                option[value=""]{
+                    color: #8F9BB3;
+                }
+
+            }
+            .down{
+                position:absolute;
+                bottom:14px;
+                right: 15px;
+                color: #8F9BB3;
+            }
+            .warning{
+                @include text(14px,#8F9BB3,400);
+            }
+            .count{
+                width: 100%;
+                text-align: end;
+                @include text(14px,#8F9BB3,400);
+                
+            }
+            .photo{
+                input{
+                    display: none;
+                }
+                span{
+                    color: #8F9BB3;
+                    @include display(row,center,flex-start,4px);
+                    svg{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+            select,.photo{
+                cursor: pointer;
+            }
+            .error{
+                @include text(13px,red,400);
+                position: absolute;
+                bottom: -17px;
+            }
+            .area{
+                bottom: 7px;
+            }
+        }
+        .keyBtns{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap;
+            .key{
+                @include button(6px 40px 6px 16px,25px,#2E3A59,#fff);
+                position: relative;
+                min-width:20px; 
+                display:inline-block;
+                .cancel{
+                    position:absolute;
+                    top: 7px;
+                    right: 10px;
+                    width: 18px;
+                    height: 18px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .continue-btn{
+            margin-top: 20px;
+            @include button-h-w(48px,100%,#00BF71,#fff,8px);
+            cursor: pointer;
+            transition: 300ms all;
+            &:hover{
+                background-color: darken(#00BF71,2.3);
+            }
+        }
+    }
+}
+
+@media (min-width:768px) {
+   .content{
+    margin: 0 auto;
+    width: 50%;
+
+   }
+}

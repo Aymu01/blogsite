@@ -1,0 +1,46 @@
+@import '../scss/global.scss';
+.blog{
+    @include display(column,flex-start,center,16px);
+    margin-bottom: 40px;
+  //  background-color: red;
+    .image{
+        position: relative;
+       margin-bottom: 16px;
+        div{
+            width: 200px;
+            height: 210px;
+           
+            border: 1px solid #EDF1F7;
+            border-radius: 4px;
+            
+        }
+        img{
+            min-width: 200px;
+            min-height: 210px;
+            position: absolute;
+            bottom: 15px;
+            left: 13px;
+            z-index: 1;
+        }
+    }
+    .name{
+        @include text(20px,#222B45,600);
+        width: 90%;
+        line-height: 28px;
+    }
+    .alt{
+        @include display(column,flex-start,center,15px);
+        padding-left: 16px;
+    }
+  
+}
+
+@media (min-width:768px) {
+   .blog{
+    cursor: pointer;
+    transition: 300ms all;
+   &:hover{
+    transform: scale(1.03);
+   }
+   }
+}
