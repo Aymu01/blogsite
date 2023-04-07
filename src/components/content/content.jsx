@@ -39,7 +39,6 @@ function Content() {
     }
     const photoDown = (e) => {
         setPhoto(e.target.files.length);
-        console.log(e.target.files.);
     }
     return (
         <div >
